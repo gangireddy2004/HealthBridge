@@ -1,0 +1,228 @@
+.registration-view-canvas {
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at top left, #f1f5f9 0%, #e2e8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.wizard-box-container {
+  width: 100%;
+  max-width: 680px;
+}
+
+.wizard-progress-header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.wizard-progress-header::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background: #cbd5e1;
+  z-index: 1;
+}
+
+.step-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-number {
+  width: 42px;
+  height: 42px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-weight: 700;
+  border: 4px solid #f1f5f9;
+  transition: var(--transition-smooth);
+}
+
+.step-node span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.step-node.active-node .node-number {
+  background: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.step-node.active-node span {
+  color: var(--primary);
+}
+
+.step-node.completed-node .node-number {
+  background: var(--success);
+  color: var(--text-inverse);
+}
+
+.wizard-body-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 40px;
+  border: 1px solid #e2e8f0;
+}
+
+.wizard-slide-form h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-main);
+  border-left: 4px solid var(--primary);
+  padding-left: 12px;
+}
+
+.grid-layout-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-block-standard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-block-standard label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.input-block-standard input,
+.input-block-standard select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.input-block-standard input:focus {
+  border-color: var(--primary);
+}
+
+.segmented-control-row {
+  display: flex;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  gap: 4px;
+}
+
+.segment-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.segment-item input {
+  display: none;
+}
+
+.segment-item.active-segment {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.password-strength-meter-wrapper {
+  margin-top: 10px;
+}
+
+.meter-bar-background {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.meter-bar-fill {
+  height: 100%;
+  width: 0%;
+  transition: var(--transition-smooth);
+}
+
+.meter-status-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.field-validation-alert {
+  font-size: 0.85rem;
+  color: var(--danger);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.wizard-action-footer {
+  display: flex;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.wizard-action-footer.unified-right { justify-content: flex-end; }
+.wizard-action-footer.space-between { justify-content: space-between; }
+
+.internal-step-btn {
+  width: auto;
+  padding: 12px 28px;
+}
+
+.compile-btn { background: var(--success); }
+.compile-btn:hover { background: #16a34a; }
+
+.success-animation-hero {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.success-checkmark-circle {
+  width: 80px;
+  height: 80px;
+  background: #d4edda;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+}
+
+.checkmark-drawn-icon {
+  width: 32px;
+  height: 16px;
+  border-left: 5px solid var(--success);
+  border-bottom: 5px solid var(--success);
+  transform: rotate(-45deg) translate(4px, -2px);
+}

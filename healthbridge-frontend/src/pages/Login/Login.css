@@ -1,0 +1,367 @@
+.auth-split-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.brand-display-section {
+  flex: 1.1;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  color: var(--text-inverse);
+}
+
+.brand-canvas-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.brand-content-stack {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.app-logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.pulse-dot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: logoPulse 2s infinite;
+}
+
+.brand-content-stack h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.brand-content-stack p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.form-interactive-section {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.glass-auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(0);
+  transition: var(--transition-smooth);
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.interactive-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.floating-field-group {
+  position: relative;
+  width: 100%;
+}
+
+.floating-field-group input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 1rem;
+  background: var(--surface);
+  transition: var(--transition-smooth);
+}
+
+.floating-field-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.floating-field-group label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+
+.floating-field-group input:focus ~ label,
+.floating-field-group input:not(:placeholder-shown) ~ label {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  background: var(--surface);
+  padding: 0 6px;
+  left: 10px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.form-utility-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.checkbox-custom-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.recovery-hyperlink-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  transition: var(--transition-smooth);
+}
+
+.recovery-hyperlink-btn:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
+
+.action-btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.action-btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.separator-line {
+  text-align: center;
+  position: relative;
+  margin: 12px 0;
+}
+
+.separator-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.separator-line span {
+  position: relative;
+  background: var(--surface);
+  padding: 0 12px;
+  z-index: 2;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Dual Column Alignment Styles for SSO Buttons Row */
+.sso-buttons-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.sso-buttons-row .action-btn-oauth {
+  flex: 1;
+  padding: 12px;
+  font-size: 0.9rem;
+  background: var(--surface);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+}
+
+.sso-buttons-row .action-btn-oauth:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.sso-icon {
+  font-size: 1.1rem;
+}
+
+.auth-footer-prompt {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.auth-footer-prompt a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Modal Structure Overlay Layouts */
+.modal-overlay-wrapper {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeInModal 0.3s ease-out;
+}
+
+.glass-modal-card {
+  background: var(--surface);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--glass-border);
+}
+
+.glass-modal-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.glass-modal-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.glass-modal-card input {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.glass-modal-card input:focus {
+  border-color: var(--primary);
+}
+
+.modal-actions-row {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.reset-cancel-btn {
+  width: auto;
+  padding: 10px 20px;
+}
+
+.reset-trigger { 
+  padding: 10px 24px; 
+  margin-top: 0; 
+  width: auto; 
+  background: var(--secondary); 
+}
+
+.reset-trigger:hover {
+  background: #0284c7;
+}
+
+@keyframes logoPulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

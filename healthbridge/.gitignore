@@ -1,0 +1,89 @@
+# =========================================================================
+#                   HEALTHBRIDGE SYSTEM ENVIRONMENT IGNORE RULES
+# =========================================================================
+
+### Java & Maven Build Artifacts ###
+# Ignore the target directory containing compiled java class binaries
+target/
+# Do not ignore the maven wrapper jar; it is required to run mvnw commands natively
+!.mvn/wrapper/maven-wrapper.jar
+# Do not ignore nested target folders located deep inside source structures
+!**/src/main/**/target/
+!**/src/test/**/target/
+# Ignore Kotlin metadata caches
+.kotlin
+
+### IntelliJ IDEA IDE Cache Files ###
+# Ignore local workspace layout modules, compilers, and project repository caches
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse IDE Cache Files ###
+# Ignore auto-generated files, project descriptors, and Spring Tool Suite cache directories
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans IDE Cache Files ###
+# Ignore private cache folders, temporary distribution builds, and Gradle mappings
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### Visual Studio Code Cache Files ###
+# Ignore local workspace configurations and extension settings
+.vscode/
+
+### Operating System System Hidden Files ###
+# Ignore hidden thumbnail and metadata files generated automatically by macOS and Windows
+.DS_Store
+Thumbs.db
+
+# =========================================================================
+#                       REACT FRONTEND DEPLOYMENT RULES
+# =========================================================================
+
+### JavaScript Node Dependencies ###
+# Ignore the external dependencies folder; it holds thousands of third-party libraries 
+# downloaded via 'npm install'. It is massive and should never be pushed to GitHub.
+node_modules/
+.pnpm-store/
+jspm_packages/
+web_modules/
+
+### Production Builds & Bundles ###
+# Ignore compiled, minified code. These production bundles are generated dynamically 
+# during deployment, so tracking them in Git causes unnecessary merge conflicts.
+build/
+dist/
+out/
+
+### Private Local Environment Variables ###
+# CRUCIAL SECURITY IGNORE: Protects your credentials by keeping raw text configuration 
+# files containing private security keys or passwords hidden from public visibility.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+### Error Log Handlers ###
+# Ignore tracking diagnostic report streams created during pipeline crashes
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
